@@ -22,11 +22,15 @@ Swarm Algorithm是一種透過模仿自然界生物的群體行為的計算方�
 ---
 ### 測試優化程序效率的函數
 1. Rastrigin Function
-$$ f(\mathbf{x}) = An + \sum_{i=1}^n \left[x_i^2 - A \cos(2\pi x_i)\right] $$
+```math
+f(\mathbf{x}) = An + \sum_{i=1}^n \left[x_i^2 - A \cos(2\pi x_i)\right]
+```
 - \( A \) is usually set to 10.
 - \( n \) is the dimensionality of the problem.
 2. Styblinski-Tang Function
-$$ f(\mathbf{x}) = \frac{1}{2} \sum_{i=1}^n \left(x_i^4 - 16x_i^2 + 5x_i\right) $$
+```math
+f(\mathbf{x}) = \frac{1}{2} \sum_{i=1}^n \left(x_i^4 - 16x_i^2 + 5x_i\right)
+```
 - \( n \) is the dimensionality of the problem.
 ---
 <details>
@@ -136,7 +140,9 @@ ACO演算法可以解決旅行銷售員問題（TSP）、車輛路徑問題（VR
 * 為了防止演算法過擬合，使演算法更好的搜索潛在路徑，因此信息素有蒸發機制，會隨著時間遞減
 
 ### 轉移規則
-$$p_{ij} = \frac{(\tau_{ij}^\alpha) (\eta_{ij}^\beta)}{\sum_{k \in \text{可達節點}} (\tau_{ik}^\alpha) (\eta_{ik}^\beta)}$$
+```math
+p_{ij} = \frac{(\tau_{ij}^\alpha) (\eta_{ij}^\beta)}{\sum_{k \in \text{可達節點}} (\tau_{ik}^\alpha) (\eta_{ik}^\beta)}
+```
 此公式計算  
 - 其中 τ_ij 是節點 i 到 j 的信息素濃度
 - η_ij 是啟發式信息（如城市間的倒數距離）
