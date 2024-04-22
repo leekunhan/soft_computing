@@ -1,5 +1,6 @@
-# soft_computing TOC
-- [soft\_computing TOC](#soft_computing-toc)
+# soft_computing 
+**TOC**
+- [soft\_computing](#soft_computing)
 - [Swarm Algorithm](#swarm-algorithm)
     - [測試優化程序效率的函數](#測試優化程序效率的函數)
   - [PSO (Particle Swarm Optimization)](#pso-particle-swarm-optimization)
@@ -12,7 +13,7 @@
     - [ACO Psuedo Code](#aco-psuedo-code)
   - [FireFly](#firefly)
   - [GA (Genetic Algorithm)](#ga-genetic-algorithm)
-
+---
 # Swarm Algorithm
 Swarm Algorithm (群智算法)   
 可以手打一個演算法或是使用`pyswarms`函示庫獲得相關演算法。  
