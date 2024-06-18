@@ -2,7 +2,7 @@
 **TOC**
 - [soft\_computing](#soft_computing)
 - [Swarm Algorithm](#swarm-algorithm)
-    - [測試優化程序效率的函數](#測試優化程序效率的函數)
+    - [測試優化程式效率的函數](#測試優化程式效率的函數)
   - [PSO (Particle Swarm Optimization)](#pso-particle-swarm-optimization)
     - [速度更新公式](#速度更新公式)
     - [PSO Psuedo Code](#pso-psuedo-code)
@@ -13,6 +13,8 @@
     - [ACO Psuedo Code](#aco-psuedo-code)
   - [FireFly](#firefly)
   - [GA (Genetic Algorithm)](#ga-genetic-algorithm)
+    - [Key Component](#key-component)
+    - [GA Psuedo code](#ga-psuedo-code)
 ---
 # Swarm Algorithm
 Swarm Algorithm (群智算法)   
@@ -20,7 +22,7 @@ Swarm Algorithm (群智算法)
 Swarm Algorithm是一種透過模仿自然界生物的群體行為的計算方式，透過模擬社會動物(螞蟻、鳥等)來解決複雜的優化問題，核心思想是透過個體之間的簡單規則和相互作用來尋找全局最優解(Global Optimize)。
 
 ---
-### 測試優化程序效率的函數
+### 測試優化程式效率的函數
 1. Rastrigin Function
 ```math
 f(\mathbf{x}) = An + \sum_{i=1}^n \left[x_i^2 - A \cos(2\pi x_i)\right]
@@ -192,4 +194,29 @@ p_{ij} = \frac{(\tau_{ij}^\alpha) (\eta_{ij}^\beta)}{\sum_{k \in \text{可達節
 <summary>GA (Genetic Algorithm)</summary>
 
 ## GA (Genetic Algorithm)
+模仿生物進化過程的搜索啟發式算法，它通過自然`選擇`、`遺傳`、`突變`等機制來解決優化問題。  
+### Key Component
+* **評估**: 根據一個適應度函數（fitness function）來評估其表現。
+* **選擇**: 根據個體的適應度進行選擇，適應度較高的個體有更大機會被選中進行後續的繁殖。這模仿了自然界中`適者生存`的原則。
+* **交叉（Crossover）**: 選擇後的個體會進行交叉操作，即兩個個體交換他們的染色體部分，以產生新的個體。這一步骤模仿生物的`繁殖過程`，有助於產生新的基因組合。
+* **突變（Mutation）**: 在新的個體中隨機改變某些基因，這可以防止算法過早收斂於局部最優解，並增加找到全局最優解的機會。突變率通常設定得很低。
+[GA程式碼](./GA.py)
+### GA Psuedo code
+```md
+**初始化：**
+
+1. 初始化一個含有 N 個個體的群體。
+2. 定義適應度函數，用來評估每個個體的適應度。
+**迭代過程：**
+重複以下步驟直到達到終止條件（如最大迭代次數或解的質量）：
+
+3. 計算每個個體的適應度。
+4. 每個個體根據適應度進行選擇：
+   a. 選擇操作：根據個體的適應度選出適合進行交叉的個體。
+5. 更新個體：
+   a. 交叉操作：隨機選擇兩個個體進行染色體交換，形成新個體。
+   b. 突變操作：對新生成的個體進行隨機基因突變，以增加多樣性。
+   c. 重新評估所有個體的適應度。
+6. 檢查並記錄目前找到的最佳解。
+```
 </details>
